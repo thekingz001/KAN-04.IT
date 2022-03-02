@@ -1,0 +1,51 @@
+<table id="table" border="1" class="table text-center">  
+    <thead>  
+        <tr>  
+            <th>NO.</th>
+            <th>DocNo</th>  
+            <th>DocDate</th>  
+            <th>DocTime</th>  
+            <th>SalesNo</th> 
+            <th>NetTotal</th> 
+        </tr>  
+    </thead>  
+     <tbody>  
+     <% for(var i=0; i < data.length; i++) { %>
+        <tr>  <td><%= i+1 %></td>
+            <td><%= data[i].transac_header.DocNo %></td>  
+            <td><%= data[i].transac_header.DocDate %></td>   
+            <td><%= data[i].transac_header.DocTime %></td>  
+            <td><%= data[i].SalesNo %></td>  
+            <td><%= data[i].transac_header.NetTotal %></td> 
+        </tr>  
+     <% } %>
+     </tbody>
+  </table>
+
+
+  <div class="row" style="margin-top: 10px;">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body"> <p>ประวัติบิลขาย</p><br>
+                <table id="myTable" class="table table-striped table-hover table-sm nowrap" style="width:100%; border: 0.5px solid black; margin-top: 10px;">
+                    <thead>
+                        <tr>
+                            <th class="table-primary" >วันที่ขาย</th>
+                            <th class="table-primary" >มูลค่าบิลขาย</th>
+                            <th class="table-primary" style='text-align:center;'>เซลล์ที่ขาย</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+
+                        <tr class='w3-hover-blue'>
+                        <td>test</td>
+                        <td style='text-align:right;'>test0</td>
+                        <td style='text-align:right;'>test1</td>     
+                        </tr> 
+
+                    </tbody>
+                </table>
+            </div>
+        </div>    
+    </div>
