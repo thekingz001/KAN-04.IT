@@ -1,8 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const Sequelize = require('sequelize');
 var models = require('../models'); // loads index.js
 // var Transac_header = models.transac_header;
-var Sales = models.sales;
+var Transac_header = models.transac_header;
+
+
+// Project.Suppliers.hasMany(Project.Products, {foreignKey: 'SupplierID'});
+// Project.Products.belongsTo(Project.Suppliers, {foreignKey: 'SupplierID'});
+
+// Project.Categories.hasMany(Project.Products, {foreignKey: 'CategoryID'});
+// Project.Products.belongsTo(Project.Categories, {foreignKey: 'CategoryID'});
 
 
 // Welcome Page
@@ -18,18 +26,23 @@ router.get('/',async (req, res) => {
     //   })
     // .catch(err => console.log(err));
 
-    Sales.findAll({	
+    Transac_header.findAll({
+        where: {CustNo: 'ub6008' },
         include:[
             {
-                model: models.transac_header,
-                as:'transac_header'
+                model: models.sales,
+                as:'sales'
+            },
+            {
+                model: models.customer,
+                as:'customer'
             }
         ],
-        limit: 50
+        // limit: 5
     }).then(data => {
         //console.log("test :", JSON.stringify(test));
         
-        console.log(JSON.stringify(data));
+        // console.log(JSON.stringify(data));
         res.render('index', { 
             title: 'Home Page',
             data: data

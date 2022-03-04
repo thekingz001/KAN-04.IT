@@ -6,7 +6,7 @@ const Sequelize = require('sequelize');
 const sequelize = new Sequelize('nps', 'nps_user', '#2r&xVgOwF6', {
     host: 'kns-database21.cu4s2ibvwwoe.ap-southeast-1.rds.amazonaws.com',
     dialect: "mysql"
-  });
+});
 
 sequelize.authenticate()
 .then(() => {
