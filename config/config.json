@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "nps_user",
-    "password": "#2r&xVgOwF6",
+    "password": "",
     "database": "nps",
     "host": "kns-database21.cu4s2ibvwwoe.ap-southeast-1.rds.amazonaws.com",
     "dialect": "mysql"
